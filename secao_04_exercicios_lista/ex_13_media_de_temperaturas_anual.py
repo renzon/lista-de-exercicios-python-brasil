@@ -42,8 +42,23 @@ e em que mês elas ocorreram (mostrar o mês por extenso: 1 – Janeiro, 2 – F
     11 - Novembro:      33°
 
 """
+from statistics import mean
 
 
 def temperaturas_acima_da_media():
     """Escreva aqui sua solução: """
+    temperaturas=[]
+    for mes in range(1, 13):
+        temperaturas.append(int(input(f'Digite a temperatura do mês {mes}: ')))
+    media = mean(temperaturas)
+
+    print(f'Média anual: {media:.2f} Graus')
+
+    meses = 'Janeiro Fevereiro Março Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro'.split()
+    for indice, (mes, temperatura) in enumerate(zip(meses, temperaturas), start=1):
+        if temperatura> media:
+            indice_label= f'{indice:2d}'
+            mes_com_dois_pontos=f'{mes}:'
+            mes_label=f'{mes_com_dois_pontos:<14s}'
+            print(f'{indice_label} - {mes_label} {temperatura:2d}°')
 

@@ -21,3 +21,5 @@ letras maiúsculas ou minúsculas.
 
 def inversor(nome: str) -> str:
     """ Escreva seu código aqui embaixo """
+
+    return ''.join(reversed(nome.upper()))
