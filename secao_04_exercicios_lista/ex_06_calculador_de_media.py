@@ -12,8 +12,14 @@ imprima o número de alunos com média maior ou igual a 7.0, e imprima separado 
     Alunos com media >= 7.0: 5
     Alunos com media < 7.0: 5
 """
+from statistics import mean
 
 
 def calcular_media(*notas) -> int:
     """Escreva aqui em baixo a sua solução"""
-
+    medias = map(mean, notas)
+    medias_acima_de_7 = sum(1 for media in medias if media >= 7)
+    medias = map(mean, notas)  # foi consumido na linha acima, tem que ser criado de novo
+    medias_abaixo_de_7 = sum(1 for media in medias if media < 7)
+    print(f'Alunos com media >= 7.0: {medias_acima_de_7}')
+    print(f'Alunos com media < 7.0: {medias_abaixo_de_7}')
