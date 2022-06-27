@@ -24,3 +24,10 @@ Faça uma função que informe a quantidade de dígitos de um determinado númer
 
 """
 
+
+def imprimir_qtde_digitos_do_inteiro(n: int) -> int:
+    if not isinstance(n, int):
+        print('O valor informado não é um inteiro')
+        return
+    return len(str(n).replace('-', ''))
+
