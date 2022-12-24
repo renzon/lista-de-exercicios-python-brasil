@@ -21,4 +21,4 @@ def transformar_para_celsius():
     """Escreva aqui em baixo a sua solução"""
     graus_fah = float(input('Informe a temeperatua em F°: '))
     graus_c = 5 * ((graus_fah-32)/9)
-    print(f'Essa temperatura é de {int(graus_c)} Celsius')
+    print(f'Essa temperatura é de {round(graus_c)} Celsius')
