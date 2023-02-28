@@ -14,3 +14,6 @@ Faça um Programa que receba 4 notas, mostre as notas e a média na tela.
 
 def mostrar_notas_e_media(inteiros: list) -> str:
     """Escreva aqui em baixo a sua solução"""
+    valores_separados_por_virgula = ', '.join(str(i) for i in inteiros)
+    media = sum(inteiros) / len(inteiros)
+    return f'Notas: {valores_separados_por_virgula}. Média: {media}'
