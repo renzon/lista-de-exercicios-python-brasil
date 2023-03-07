@@ -42,9 +42,32 @@ outro número. Após o final da votação, o programa deverá exibir:
     O melhor jogador foi o número 9, com 4 votos, correspondendo a 50% do total de votos.
 
 """
+from collections import Counter
 
 
-def receber_votos(*voto):
+def receber_votos(*votos):
     """Escreva aqui em baixo a sua solução"""
-
-
+    print(f'Enquete: Quem foi o melhor jogador?')
+    print(f'---------------------------------------------------------------')
+    counter = Counter()
+    for voto in votos:
+        print(f'Número do jogador (0=fim): {voto}')
+        if voto == 0:
+            break
+        if not (1 <= voto <= 23):
+            print(f'Informe um valor entre 1 e 23 ou 0 para sair!')
+            continue
+        counter[voto] += 1
+    total_de_votos = sum(counter.values())
+    print(f'---------------------------------------------------------------')
+    print(f'Resultado da votação:')
+    print(f'---------------------------------------------------------------')
+    print(f'Foram computados {total_de_votos} votos.')
+    print(f'---------------------------------------------------------------')
+    print(f'Jogador Votos           %')
+    for jogador, votos in counter.items():
+        porcentagem= votos /total_de_votos
+        print(f'{jogador:<2d}              {votos}               {porcentagem:.1%}')
+    jogador_mais_votado, votos = counter.most_common(1)[0]
+    porcentagem = votos / total_de_votos
+    print(f'O melhor jogador foi o número {jogador_mais_votado}, com 4 votos, correspondendo a {porcentagem:.0%} do total de votos.')

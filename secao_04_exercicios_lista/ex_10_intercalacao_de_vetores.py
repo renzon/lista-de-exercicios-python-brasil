@@ -20,3 +20,10 @@ deverão ser compostos pelos elementos intercalados dos dois outros vetores.
 def intercalar(lista_1: list, lista_2: list) -> list:
     """Escreva aqui em baixo a sua solução"""
 
+    def _intercalar():
+        for i, j in zip(lista_1, lista_2):
+            yield i
+            yield j
+
+    return list(_intercalar())
+

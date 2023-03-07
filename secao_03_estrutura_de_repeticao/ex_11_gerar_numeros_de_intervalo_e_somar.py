@@ -2,7 +2,6 @@
 Exercício 11 da seção de estrutura sequencial da Python Brasil:
 https://wiki.python.org.br/EstruturaDeRepeticao
 
-
 Faça um programa que receba dois números inteiros e gere os números inteiros que estão no intervalo compreendido.
 Também mostre a soma dos números da sequência.
 
@@ -18,3 +17,9 @@ Também mostre a soma dos números da sequência.
 
 def calcular_numeros_no_intervalo_e_somar(inicio: int, fim: int) -> str:
     """Escreva aqui em baixo a sua solução"""
+    intervalo = range(inicio, fim)
+    sequencia = ', '.join(map(str, intervalo))
+    if sequencia == '':
+        sequencia = 'vazia'
+    soma = sum(intervalo)
+    return f'Sequência: {sequencia}. Soma: {soma}'
